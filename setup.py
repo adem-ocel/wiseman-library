@@ -1,7 +1,7 @@
 from setuptools import setup,find_packages
 
 setup(
-    name='wiseman-library',
+    name='wiseman_library',
     version='0.0.2',
     author='adem öcel',
     author_email='ademocel83@gmail.com',
