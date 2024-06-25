@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "wiseman_library"
+version = "0.0.5"
+description = "wiseman bundles the voice assistant infrastructure into a python library"
+authors = ["Adem <adem@example.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/adem-ocel/wiseman-library"
+repository = "https://github.com/adem-ocel/wiseman-library"
+keywords = ["voice assistant", "wiseman", "library"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
