@@ -1,5 +1,5 @@
-import Recorder
-import Recognizer
+from . import Recorder
+from . import Recognizer
 names = [
     "wiseman"
 ]
