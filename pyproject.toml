@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "wiseman_library"
-version = "1.0.0"
+version = "1.0.1"
 description = "wiseman bundles the voice assistant infrastructure into a python library"
 authors = ["Adem <adem@example.com>"]
 license = "MIT"
