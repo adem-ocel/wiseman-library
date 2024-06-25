@@ -16,7 +16,7 @@ def play_sound(file_path):
     pygame.mixer.music.load(file_path)
     pygame.mixer.music.play()
 
-def speak_with_eleven_labs(self,text):
+def speak_with_eleven_labs(text):
     client = ElevenLabs(api_key=ElevenLabsApi_info.api_key)
 
     audio = client.generate(
