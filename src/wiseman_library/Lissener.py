@@ -10,7 +10,7 @@ def lissen(function, recordtime=3):
     global __lissening
     __lissening = True
     while __lissening:
-        Recorder.record(recordtime,"voice.wav")
+        Recorder.record(recordtime)
         text = Recognizer.recognize().lower()
         for name in names:
             replacedtext = text.replace(name, '')
