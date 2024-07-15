@@ -1,7 +1,7 @@
 import speech_recognition as sr
 from . import tempfile_manager
-
-def recognize_from_google(voice="voice.wav", lang='en'):
+lang = 'en'
+def recognize_from_google(voice="voice.wav", lang=lang):
     engine = sr.Recognizer()
     with sr.AudioFile(voice) as source:
         voice_data = engine.record(source)
@@ -13,5 +13,5 @@ def recognize_from_google(voice="voice.wav", lang='en'):
         except sr.RequestError as e:
             return str(e)
         
-def recognize(voice="voice.wav", lang='en'):
+def recognize(voice="voice.wav", lang=lang):
     return recognize_from_google(voice)

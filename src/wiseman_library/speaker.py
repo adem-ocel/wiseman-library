@@ -5,7 +5,7 @@ import pygame
 from gtts import gTTS
 import os
 from . import tempfile_manager
-
+lang = 'en'
 class ElevenLabsApi_info:
     api_key=""
     voice="D1xRw7f8ZHedI7xJgfvz"
@@ -28,7 +28,7 @@ def speak_with_eleven_labs(text):
     play(audio)
 
 
-def speak_with_gtts(text,lang='en'):
+def speak_with_gtts(text,lang=lang):
     tts = gTTS(text=text, lang=lang)
     file = "/temp/"+tempfile_manager.tempfilename()
     tts.save(file)
@@ -40,5 +40,5 @@ class speak_methods:
 
 speak_method=speak_methods.gtts
 
-def speak(text,lang='en',speak_method=speak_method):
+def speak(text,lang=lang,speak_method=speak_method):
     speak_method(text,lang)    
