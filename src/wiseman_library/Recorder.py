@@ -1,7 +1,7 @@
 import pyaudio
 import wave
-
-def record(recordtime, filename="voice.wav"):
+from . import tempfile_manager
+def record(recordtime, filename="/temp/"+tempfile_manager.tempfilename()):  
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
@@ -27,3 +27,4 @@ def record(recordtime, filename="voice.wav"):
         wf.setsampwidth(audio.get_sample_size(FORMAT))
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
+        return filename

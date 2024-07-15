@@ -4,6 +4,7 @@ from elevenlabs.client import ElevenLabs
 import pygame
 from gtts import gTTS
 import os
+from . import tempfile_manager
 
 class ElevenLabsApi_info:
     api_key=""
@@ -29,9 +30,9 @@ def speak_with_eleven_labs(text):
 
 def speak_with_gtts(text,lang='en'):
     tts = gTTS(text=text, lang=lang)
-    tts.save("saying.mp3")
-    play_sound("saying.mp3")    
-    os.remove("saying.mp3")
+    file = "/temp/"+tempfile_manager.tempfilename()
+    tts.save(file)
+    play_sound(file)    
 
 class speak_methods:
     gtts = speak_with_gtts
