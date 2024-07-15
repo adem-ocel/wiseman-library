@@ -13,5 +13,4 @@ def recognize_from_google(voice="voice.wav", lang=lang):
         except sr.RequestError as e:
             return str(e)
         
-def recognize(voice="voice.wav", lang=lang):
-    return recognize_from_google(voice)
+recognize = recognize_from_google

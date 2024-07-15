@@ -7,12 +7,12 @@ names = [
 
 __lissening = True
 
-def lissen(function, recordtime=3,recorderfunction=Recorder.record,recognizefunction=Recognizer.recognize):
+def lissen(function, recordtime=3):
     global __lissening
     __lissening = True
     while __lissening:
-        recordedfile = recorderfunction(recordtime)
-        text = recognizefunction(recordedfile).lower()
+        recordedfile = Recorder.record(recordtime)
+        text = Recognizer.recognize(recordedfile).lower()
         for name in names:
             replacedtext = text.replace(name, '')
             if name in text:

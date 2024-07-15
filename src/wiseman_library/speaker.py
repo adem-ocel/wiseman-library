@@ -34,11 +34,5 @@ def speak_with_gtts(text,lang=lang):
     tts.save(file)
     play_sound(file)    
 
-class speak_methods:
-    gtts = speak_with_gtts
-    elevenlabs = speak_with_eleven_labs
 
-speak_method=speak_methods.gtts
-
-def speak(text,lang=lang,speak_method=speak_method):
-    speak_method(text,lang)    
+speak = speak_with_gtts
