@@ -1,7 +1,8 @@
 import pyaudio
 import wave
-from . import tempfile_manager
-def record(recordtime, filename="/temp/"+tempfile_manager.tempfilename()):  
+import io
+
+def record_with_default_mic(recordtime):
     CHUNK = 1024
     FORMAT = pyaudio.paInt16
     CHANNELS = 2
@@ -22,9 +23,13 @@ def record(recordtime, filename="/temp/"+tempfile_manager.tempfilename()):
     stream.close()
     audio.terminate()
 
-    with wave.open(filename, 'wb') as wf:
+    # Byte array oluşturma
+    buffer = io.BytesIO()
+    with wave.open(buffer, 'wb') as wf:
         wf.setnchannels(CHANNELS)
         wf.setsampwidth(audio.get_sample_size(FORMAT))
         wf.setframerate(RATE)
         wf.writeframes(b''.join(frames))
-        return filename
+    
+    return buffer.getvalue()
+record = record_with_default_mic

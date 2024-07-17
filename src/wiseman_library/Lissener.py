@@ -1,6 +1,5 @@
 from . import Recorder
 from . import Recognizer
-from . import tempfile_manager
 names = [
     "wiseman"
 ]
@@ -21,4 +20,3 @@ def lissen(function, recordtime=3):
 def stop_listen():
     global __lissening
     __lissening = False
-    tempfile_manager.clean_tempfiles()
